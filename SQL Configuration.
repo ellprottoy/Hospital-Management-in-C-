@@ -1,0 +1,7 @@
+CREATE INDEX LastNameIndex ON Patient (LastName); //create index on the "LastName" column of the "Patient" table
+ALTER TABLE Patient
+ADD CONSTRAINT PK_Patient PRIMARY KEY (PatientID); //create primary key constraint on the "PatientID" column of the "Patient" table
+ALTER TABLE Patient
+ADD CONSTRAINT FK_Patient_Doctor FOREIGN KEY (DoctorID) REFERENCES Doctor (DoctorID); //a foreign key constraint on the "DoctorID"
+ALTER TABLE Patient
+ADD CONSTRAINT UC_Patient_Email UNIQUE (Email); //a unique constraint on the "Email" column of the "Patient" table
